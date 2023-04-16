@@ -98,7 +98,7 @@ int Redundancia(int NumeroItensMochila, int *Mochila, int RandItem){    //funç�
 
 void Ils(struct RegItens Item[],int NumeroDeItens,int *NumeroItensMochila, int *Mochila, int *PesoMochila, int Capacidade){ //Declaracao da função ILS
     int RandMochila = rand() % (*NumeroItensMochila + 2);   //gera um numero aleatorio que vai de 0 até o numero de itens na mochila + 1,
-    int RandItem = rand() % (NumeroDeItens);    //gera um numero aleatorio que vai de 0 até o numero de itens
+    int RandItem = rand() % (NumeroDeItens);    //gera um numero aleatorio que vai de 0 até o numero de itens -1
     if(RandMochila == *NumeroItensMochila && Redundancia(*NumeroItensMochila, Mochila, RandItem) && (*PesoMochila + Item[RandItem].Peso) <= Capacidade){ //se o numero aleatorio da mochila for igual ao numero de itens na mochila, tentar adicionar um item na mochila,antes de adicionar o item aletorio na mochila , verifica se o item aletorioa a ser adicionado ja esta na mochila e se o peso da mochila + peso do item aletorio nao ultrapassa a capacidade
         int* TempMochila = realloc(Mochila, *NumeroItensMochila * sizeof(int) + sizeof(int)); //realocação da mochila para adicionar um item
             if(TempMochila == NULL){    //verificação de erro de alocacao de memoria
@@ -141,8 +141,7 @@ void Ils(struct RegItens Item[],int NumeroDeItens,int *NumeroItensMochila, int *
 
 int main(void){             //Funcao principal
     srand((unsigned int)time(NULL)); //seed para gerar numeros aleatorios baseada na funcao time
-
-    FILE *fMochila = fopen("Mochila.txt","r");  //abertura do arquivo de entrada
+    FILE *fMochila = fopen("mochila.txt","r");  //abertura do arquivo de entrada
     if(fMochila == NULL){   //verifica se o arquivo foi aberto com sucesso
         printf("\n\n Erro Na leitura do arquivo\n\n"); //imprime mensagem de erro
         return 2; //retorna 2, codigo de erro 
@@ -176,7 +175,7 @@ int main(void){             //Funcao principal
         printf(" %d \n", i );
     }
 
-    int NumeroAlteracoesPorIteracao = 10, NumeroIteracoes =100; //Declara o numero de Alteracoes por Iteracao e o numero de Iteracoes que a Ils vai executar
+    int NumeroAlteracoesPorIteracao = 2, NumeroIteracoes =100; //Declara o numero de Alteracoes por Iteracao e o numero de Iteracoes que a Ils vai executar
 
     for(int i = 0; i < NumeroIteracoes; i++){
         int tempMochila[NumeroItensMochila];    //declara um vetor para armazenar uma copia da melhor mochila
