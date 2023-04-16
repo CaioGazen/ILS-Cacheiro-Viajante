@@ -1,4 +1,4 @@
-// Nomes: Caio Pedroso Gazen, Vitor sepulveda Monteiro, Rafael Cruz Ferreira, Hyasmim Boechat
+// Nomes: Caio Pedroso Gazen, Vitor sepulveda Monteiro, Rafael Cruz Ferreira, Hyasmim Picoli Boechat
 
 #include <stdio.h>
 #include <time.h>
