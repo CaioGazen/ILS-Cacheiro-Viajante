@@ -175,7 +175,7 @@ int main(void){             //Funcao principal
         printf(" %d \n", i );
     }
 
-    int NumeroAlteracoesPorIteracao = 2, NumeroIteracoes =100; //Declara o numero de Alteracoes por Iteracao e o numero de Iteracoes que a Ils vai executar
+    int NumeroAlteracoesPorIteracao = 10, NumeroIteracoes =100; //Declara o numero de Alteracoes por Iteracao e o numero de Iteracoes que a Ils vai executar
 
     for(int i = 0; i < NumeroIteracoes; i++){
         int tempMochila[NumeroItensMochila];    //declara um vetor para armazenar uma copia da melhor mochila
